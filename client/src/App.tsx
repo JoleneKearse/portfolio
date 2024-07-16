@@ -1,10 +1,11 @@
-
+import { NavBar } from "./components/NavBar";
 
 function App() {
 
   return (
     <>
-      <h1 className="text-6xl">Jolene</h1>
+      <NavBar />
+      {/* Add your app content here */}
     </>
   )
 }
