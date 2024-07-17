@@ -1,3 +1,5 @@
+import { Routes } from "react-router-dom";
+
 import { NavBar } from "./components/NavBar";
 
 function App() {
@@ -5,7 +7,9 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* Add your app content here */}
+      <Routes>
+
+      </Routes>
     </>
   )
 }
