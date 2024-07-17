@@ -1,4 +1,4 @@
-export function Header() {
+export function IntroHeading() {
   return (
     <header className="px-2 text-center md:px-6 lg:px-20">
       <p className="text-3xl leading-loose">Hi! I'm</p>
