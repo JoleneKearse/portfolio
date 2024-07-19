@@ -1,9 +1,9 @@
 import { IntroHeading } from "../components/IntroHeading";
 
-export function Home() {
+export function HomePage() {
   return (
     <main className="">
       <IntroHeading />
     </main>
-  )
+  );
 }

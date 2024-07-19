@@ -28,11 +28,36 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
             : "hidden"
         } md:flex`}
       >
-        <TextLink text="Home" tabIndex={1} />
-        <TextLink text="About" tabIndex={2} />
-        <TextLink text="Skills" tabIndex={3} />
-        <TextLink text="Projects" tabIndex={4} />
-        <TextLink text="Contact" tabIndex={5} />
+        <TextLink
+          text="Home"
+          tabIndex={1}
+          isHamburgerOpen={isHamburgerOpen}
+          setIsHamburgerOpen={setIsHamburgerOpen}
+        />
+        <TextLink
+          text="About"
+          tabIndex={2}
+          isHamburgerOpen={isHamburgerOpen}
+          setIsHamburgerOpen={setIsHamburgerOpen}
+        />
+        <TextLink
+          text="Skills"
+          tabIndex={3}
+          isHamburgerOpen={isHamburgerOpen}
+          setIsHamburgerOpen={setIsHamburgerOpen}
+        />
+        <TextLink
+          text="Projects"
+          tabIndex={4}
+          isHamburgerOpen={isHamburgerOpen}
+          setIsHamburgerOpen={setIsHamburgerOpen}
+        />
+        <TextLink
+          text="Contact"
+          tabIndex={5}
+          isHamburgerOpen={isHamburgerOpen}
+          setIsHamburgerOpen={setIsHamburgerOpen}
+        />
         {isHamburgerOpen && (
           <button onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}>
             <IoCloseCircleOutline size="2em" />
