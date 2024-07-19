@@ -50,6 +50,7 @@ export default {
         "gradient-primary": `linear-gradient(to right, ${theme(
           "colors.pink"
         )}, ${theme("colors.purple")})`,
+        stars: "url('/background.png')",
       }),
     },
   },
