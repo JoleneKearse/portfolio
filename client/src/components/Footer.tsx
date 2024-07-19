@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 
 export function Footer() {
   return (
-    <footer className="flex justify-between px-2 py-4 md:px-6 lg:px-20 md:py-6 lg:py-10">
+    <footer className="flex justify-between">
       <p className="px-2 text-sm text-center text-neutral-300">
         &copy; {new Date().getFullYear()} Meet Jolene. All rights reserved.
       </p>
