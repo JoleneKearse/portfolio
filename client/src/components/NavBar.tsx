@@ -1,6 +1,5 @@
 import Logo from "/logo.webp";
-import { Link } from "./Link";
-
+import { TextLink } from "./TextLink";
 
 type NavBarProps = {
   isHamburgerOpen: boolean;
@@ -29,17 +28,21 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d={isHamburgerOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              d={
+                isHamburgerOpen
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16m-7 6h7"
+              }
             />
           </svg>
         </button>
       </div>
       <div className="flex gap-4 md:gap-6 lg:gap-10">
-        <Link text="Home" />
-        <Link text="About" />
-        <Link text="Skills" />
-        <Link text="Projects" />
-        <Link text="Contact" />
+        <TextLink text="Home" />
+        <TextLink text="About" />
+        <TextLink text="Skills" />
+        <TextLink text="Projects" />
+        <TextLink text="Contact" />
       </div>
     </nav>
   );
