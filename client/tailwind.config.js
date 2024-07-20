@@ -52,6 +52,14 @@ export default {
         )}, ${theme("colors.purple")})`,
         stars: "url('/background.png')",
       }),
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        alegreya: ['Alegreya', 'serif'],
+      },
+      fontWeight: {
+        normal: 400,
+        bold: 700,
+      },
     },
   },
   plugins: [],
