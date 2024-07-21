@@ -54,6 +54,7 @@ export default {
       }),
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        "roboto-mono": ["RobotoMono", "monospace"],
         alegreya: ['Alegreya', 'serif'],
       },
       fontWeight: {

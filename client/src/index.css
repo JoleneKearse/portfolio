@@ -8,15 +8,31 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/Roboto.woff2) format('woff2');
+    src: url(/fonts/Roboto-Medium.ttf) format('truetype');
   }
 
   @font-face {
-    font-family: 'Alegreya';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/Alegreya.woff2) format('woff2');
+    src: url(/fonts/Roboto-Bold.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto-Italic.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto-mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/RobotoMono-VariableFont_wght.ttf) format('truetype');
   }
 
   @font-face {
@@ -24,20 +40,24 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url(/fonts/Alegreya-Bold.woff2) format('woff2');
+    src: url('/fonts/Alegreya-SemiBold.ttf') format('truetype');
   }
 
-  .alegreya-normal {
-    font-family: "Alegreya", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
+  @font-face {
+    font-family: 'Alegreya';
     font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/Alegreya-Bold.ttf') format('truetype');
   }
-
-  .alegreya-bold {
-    font-family: "Alegreya", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
+  
+  @font-face {
+    font-family: 'Alegreya';
     font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Alegreya-ExtraBold.ttf') format('truetype');
   }
+  
+  
 }
