@@ -7,11 +7,27 @@ type TextLinkProps = {
   setIsHamburgerOpen: (isOpen: boolean) => void;
 };
 
-export function TextLink({ text, tabIndex, isHamburgerOpen, setIsHamburgerOpen }: TextLinkProps) {
+// ensure hamburger menu only opens on mobiles
+function isMobile() {
+  return window.innerWidth < 768;
+}
+
+export function TextLink({
+  text,
+  tabIndex,
+  isHamburgerOpen,
+  setIsHamburgerOpen,
+}: TextLinkProps) {
+  const handleClick = () => {
+    if (isMobile()) {
+      setIsHamburgerOpen(!isHamburgerOpen);
+    }
+  };
+
   return (
     <NavLink
       to={text.toLowerCase() === "home" ? "/" : text.toLowerCase()}
-      onClick={() => setIsHamburgerOpen(!isHamburgerOpen)} 
+      onClick={handleClick}
       className="inline-block font-semibold tracking-wide hover:text-[#0000] transition ease-in cursor-pointer hover:bg-gradient-to-r from-pink-600 to-purple-500 hover:bg-clip-text hover:font-bold"
       tabIndex={tabIndex}
     >
