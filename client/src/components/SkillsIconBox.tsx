@@ -14,15 +14,15 @@ export function SkillsIconBox({ skills }: Skills) {
       {/* HTML */}
       <p className="mt-6">
         I use semantic{" "}
-        <span className="font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text">
+        <span className="tech-text">
           HTML
         </span>
         , and{" "}
-        <span className="font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text">
+        <span className="tech-text">
           JSX
         </span>
         , to create{" "}
-        <span className="font-semibold tracking-wider text-neutral-500">
+        <span className="emphasis-text">
           accessible
         </span>{" "}
         experiences ensuring everyone can use your service / product.
@@ -30,7 +30,7 @@ export function SkillsIconBox({ skills }: Skills) {
       {/* CSS */}
       <p className="mt-6">
         I love creating engaging designs using{" "}
-        <span className="font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text">
+        <span className="tech-text">
           CSS
         </span>
         . Not only does this bring out the artist in me, but I have an air-tight
@@ -38,7 +38,7 @@ export function SkillsIconBox({ skills }: Skills) {
       </p>
       <p className="mt-6">
         I'm able to quickly switch{" "}
-        <span className="font-semibold tracking-wider text-neutral-500">
+        <span className="emphasis-text">
           CSS / UI
         </span>{" "}
         libraries on demand.
@@ -54,11 +54,11 @@ export function SkillsIconBox({ skills }: Skills) {
       {/* GIT */}
       <p className="mt-6">
         I regularly use{" "}
-        <span className="font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text">
+        <span className="tech-text">
           Git
         </span>{" "}
         and{" "}
-        <span className="font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text">
+        <span className="tech-text">
           Github
         </span>{" "}
         for version control, teamwork & organizing a project.

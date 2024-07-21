@@ -19,8 +19,8 @@ export function SkillsPage() {
   return (
     <main>
       <Heading />
-      <p className="mt-20">Psst, here's how I'll be an <span className="font-semibold tracking-wider text-neutral-400">asset</span> to you...</p>
-      <p className="mt-6">Let me show you in <span className="font-semibold tracking-wider text-neutral-400">#</span> easy steps!</p>
+      <p className="mt-20">Psst, here's how I'll be an <span className="font-semibold tracking-wider text-neutral-500">asset</span> to you...</p>
+      <p className="mt-6">Let me show you in <span className="font-semibold tracking-wider text-neutral-500">#</span> easy steps!</p>
       <SkillsIconBox skills={mainSkills} />
       <SkillTimeline />
     </main>

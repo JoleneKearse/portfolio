@@ -58,6 +58,14 @@
     font-display: swap;
     src: url('/fonts/Alegreya-ExtraBold.ttf') format('truetype');
   }
-  
-  
+}
+
+@layer components {
+  .tech-text {
+    @apply font-semibold tracking-widest font-roboto-mono text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text;
+  }
+
+  .emphasis-text {
+    @apply font-semibold tracking-wider text-neutral-500;
+  }
 }
