@@ -35,7 +35,7 @@ export function SkillsPage() {
 
   return (
     <main>
-      <Heading />
+      <Heading text="Jolene's Skills" />
       <article className="space-y-6 text-balance max-w-prose">
         <p className="mt-20">
           Psst, here's how I'll be an{" "}
