@@ -18,6 +18,7 @@ const imageLookup = {
   Python: "/python.svg",
   Rust: "/rust.svg",
   Vite: "/vite.svg",
+  Supabase: "/supabase.svg",
 };
 
 export default imageLookup;

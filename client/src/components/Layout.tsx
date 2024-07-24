@@ -9,7 +9,9 @@ export function Layout() {
   return (
     <div className="px-2 py-4 md:px-6 lg:px-20 md:py-6 lg:py-10">
       <NavBar isHamburgerOpen={isHamburgerOpen} setIsHamburgerOpen={setIsHamburgerOpen} />
-      <Outlet />
+      <main className="mx-auto my-20 max-w-prose">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   )
