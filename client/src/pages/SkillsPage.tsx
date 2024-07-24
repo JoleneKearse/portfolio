@@ -45,7 +45,7 @@ export function SkillsPage() {
           steps!
         </p>
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          #1: I'm ready to go!
+          <span className="text-5xl font-alegreya text-neutral-600">#1</span> I'm ready to go!
         </h2>
         <SkillsIconBox skills={mainSkills} />
         <p className="mt-20">
@@ -99,7 +99,7 @@ export function SkillsPage() {
         </p>
         {/* POINT TWO */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          #2: I'm actively future proofing!
+        <span className="text-5xl font-alegreya text-neutral-600">#2</span> I'm actively future proofing!
         </h2>
         <SkillsIconBox skills={futureProofingSkills} />
         <p>
@@ -124,7 +124,7 @@ export function SkillsPage() {
         </p>
         {/* POINT THREE */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          #3: I have experience using other tools when the situation arises!
+        <span className="text-5xl font-alegreya text-neutral-600">#3</span> I can use other tools when the situation arises!
         </h2>
         <SkillsIconBox skills={allOtherSkills} />
         <p>
