@@ -51,11 +51,12 @@ export default {
           "colors.pink"
         )}, ${theme("colors.purple")})`,
         stars: "url('/background.png')",
+        code: "url('/ts-code.webp')",
       }),
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         "roboto-mono": ["RobotoMono", "monospace"],
-        alegreya: ['Alegreya', 'serif'],
+        alegreya: ["Alegreya", "serif"],
       },
       fontWeight: {
         normal: 400,
