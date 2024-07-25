@@ -36,16 +36,12 @@ export function SkillsPage() {
     <main>
       <Heading text="Jolene's Skills" />
       <article className="space-y-6 text-balance max-w-prose">
-        <p className="mt-10">
-          Psst, here's how I'll be an{" "}
-          <span className="emphasis-text">asset</span> to you...
-        </p>
         <p className="">
-          Let me show you in <span className="emphasis-text">3</span> easy
-          steps!
+          I appreciate you taking the time out of your busy schedule to check out my portfolio.  Let me show you in <span className="emphasis-text">3</span> quick & easy steps how I'll be an{" "}
+          <span className="emphasis-text">asset</span>..
         </p>
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          <span className="text-5xl font-alegreya text-neutral-600">#1</span> I'm ready to go!
+          <span className="pr-4 text-5xl font-alegreya text-neutral-600"># 1</span> I'm ready to go!
         </h2>
         <SkillsIconBox skills={mainSkills} />
         <p className="mt-20">
@@ -99,7 +95,7 @@ export function SkillsPage() {
         </p>
         {/* POINT TWO */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-        <span className="text-5xl font-alegreya text-neutral-600">#2</span> I'm actively future proofing!
+        <span className="pr-4 text-5xl font-alegreya text-neutral-600"># 2</span> I'm actively future proofing!
         </h2>
         <SkillsIconBox skills={futureProofingSkills} />
         <p>
@@ -124,7 +120,7 @@ export function SkillsPage() {
         </p>
         {/* POINT THREE */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-        <span className="text-5xl font-alegreya text-neutral-600">#3</span> I can use other tools when the situation arises!
+        <span className="pr-4 text-5xl font-alegreya text-neutral-600"># 3</span> I use other tools when the situation arises!
         </h2>
         <SkillsIconBox skills={allOtherSkills} />
         <p>

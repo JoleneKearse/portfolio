@@ -4,8 +4,8 @@ type HeadingProps = {
 
 export function Heading({ text }: HeadingProps) {
   return (
-    <header className="py-20 text-center md:px-6 lg:px-20">
-      <h1 className="block text-6xl subpixel-antialiased font-extrabold leading-12 text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text font-alegreya">
+    <header className="py-20">
+      <h1 className="text-6xl subpixel-antialiased font-extrabold leading-12 text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text font-alegreya">
         {text}
       </h1>
     </header>

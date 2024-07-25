@@ -13,11 +13,11 @@ export function SkillTimeline() {
     },
   ];
   return (
-    <div className="flex flex-col items-center mx-auto my-8 rounded-lg bg-stars max-w-prose">
+    <div className="flex flex-col items-center mx-auto mt-20 rounded-lg bg-stars max-w-prose">
       <TransitionGroup>
         {skills.map((item, index) => (
           <CSSTransition key={index} timeout={500} classNames="fade">
-            <div className="flex items-center object-cover w-4/5 p-4 mx-auto my-4 transition-transform duration-300 ease-in-out border border-gray-300 rounded hover:bg-purple-900 hover:scale-105 text-neutral-200">
+            <div className="flex items-center object-cover w-4/5 p-4 mx-auto my-6 transition-transform duration-300 ease-in-out border border-gray-300 rounded hover:bg-purple-900 hover:scale-105 text-neutral-200">
               <div className="mr-4 font-bold">{item.year}</div>
               <div className="">{item.skill}</div>
             </div>
