@@ -35,12 +35,6 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
             setIsHamburgerOpen={setIsHamburgerOpen}
           />
           <TextLink
-            text="About"
-            tabIndex={2}
-            isHamburgerOpen={isHamburgerOpen}
-            setIsHamburgerOpen={setIsHamburgerOpen}
-          />
-          <TextLink
             text="Skills"
             tabIndex={3}
             isHamburgerOpen={isHamburgerOpen}

@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Heading } from "../components/Heading";
 import { SkillsIconBox } from "../components/SkillsIconBox";
-import { SkillTimeline } from "../components/SkillTimeline";
 import { Icon } from "../types/types";
 import { DropdownButton } from "../components/DropdownButton";
 
@@ -256,7 +255,6 @@ export function SkillsPage() {
             />
           </>
         )}
-        <SkillTimeline />
       </article>
     </main>
   );
