@@ -1,7 +1,9 @@
 // import { ComponentType } from "react";
 
+import { ReactNode } from "react";
+
 type SocialLinkProps = {
-  img: string;
+  img: ReactNode;
   url: string;
   title: string;
 };
