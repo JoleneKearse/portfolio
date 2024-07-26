@@ -43,7 +43,7 @@ export function SkillsPage() {
   };
 
   return (
-    <main>
+    <section>
       <Heading text="Jolene's Skills" />
       <article className="space-y-6 text-balance max-w-prose">
         <p>
@@ -256,6 +256,6 @@ export function SkillsPage() {
           </>
         )}
       </article>
-    </main>
+    </section>
   );
 }

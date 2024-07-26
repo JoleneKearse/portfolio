@@ -5,7 +5,7 @@ import Jolene from "/jolene.webp";
 
 export function HomePage() {
   return (
-    <main className="flex flex-col gap-20">
+    <section className="flex flex-col gap-20">
       <IntroHeading />
       <div className="md:justify-evenly md:flex md:gap-12">
         <div className="w-2/3 mx-auto bg-center bg-no-repeat bg-cover rounded-t-none bg-code md:bg-right-top">
@@ -21,6 +21,6 @@ export function HomePage() {
           <p>Or explore my <NavLink to="/projects" className="emphasis-text">Projects</NavLink> to see I know my stuff.</p>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
