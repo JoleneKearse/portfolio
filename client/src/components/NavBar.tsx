@@ -10,7 +10,7 @@ type NavBarProps = {
 
 export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
   return (
-    <nav className="fixed top-0 w-5/6 h-24 bg-purple-950a backdrop-blur-2xl">
+    <nav className="fixed top-0 w-full h-24 pt-6 md:w-5/6 bg-purple-950a backdrop-blur-2xl">
       <div className="flex items-center justify-between w-full h-12">
         <img src={Logo} alt="logo" className="w-10 md:w-12" />
         <div className={`md:hidden ${isHamburgerOpen ? "hidden" : "block"}`}>
@@ -18,7 +18,7 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
             onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
             className=""
           >
-            <RxHamburgerMenu size="2em" />
+            <RxHamburgerMenu size="2em" className="mr-6" />
           </button>
         </div>
         <div
