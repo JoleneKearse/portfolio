@@ -6,7 +6,7 @@ export function IntroHeading() {
         Jolene Kearse
       </h1>
       <h2 className="block text-4xl leading-tight text-neutral-400">
-        Software Engineer
+        Frontend Developer
       </h2>
 
       <p className="mt-10 text-2xl leading-snug">
