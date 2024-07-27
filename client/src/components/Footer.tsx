@@ -4,8 +4,8 @@ import { MdEmail } from "react-icons/md";
 
 export function Footer() {
   return (
-    <footer className="absolute w-full bottom-2 md:w-5/6">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <footer className="absolute w-full bottom-6 md:w-5/6">
+      <div className="flex flex-col flex-wrap items-center justify-between gap-2 md:flex-row">
         <p className="pr-2 text-sm text-center text-neutral-300">
           &copy; {new Date().getFullYear()} Meet Jolene. All rights reserved.
         </p>
