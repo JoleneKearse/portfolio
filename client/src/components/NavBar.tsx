@@ -24,10 +24,11 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
         <div
           className={`flex gap-4 md:gap-6 lg:gap-10 ${
             isHamburgerOpen
-              ? "block bg-neutral-950 w-screen h-screen flex-col justify-center items-center"
+              ? "absolute top-0 bottom-0 block bg-purple-950b backdrop-blur-2xl w-screen h-screen flex-col justify-center items-center"
               : "hidden"
           } md:flex`}
         >
+          {isHamburgerOpen && <img src={Logo} alt="logo" className="w-10 md:w-12" />}
           <TextLink
             text="Home"
             tabIndex={1}
