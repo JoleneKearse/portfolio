@@ -62,7 +62,7 @@ export function SkillsPage() {
         {!isOneDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              I use these technologies every single day and will immediately
+              I use these frontend technologies every single day and will immediately
               employ them for you!
             </p>
             <DropdownButton
@@ -138,8 +138,7 @@ export function SkillsPage() {
         {!isTwoDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              Okay, not yet, but I predict these languages will gain in
-              importance. I'm learning and improving in them daily.
+              I go above and beyond present-day requirements by continually updating my repertoire.  
             </p>
             <DropdownButton
               text="more"
@@ -149,7 +148,7 @@ export function SkillsPage() {
             />
           </>
         )}
-        {isOneDropdownOpen && (
+        {isTwoDropdownOpen && (
           <>
             <p>
               I absolutely love <span className="emphasis-text">"strict"</span>{" "}
@@ -190,9 +189,7 @@ export function SkillsPage() {
         {!isThreeDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              I use the right tool for the job. Whether something is faster to
-              implement in Python, I'm choosing a database and backend, or
-              designing something new.
+              I said I am a Frontend+ Developer - that's not a typo <i>(I'm too detail-oriented for that!)</i>. I use various languages for CLI tools, create full-stack projects, and make full use of design tools.
             </p>
             <DropdownButton
               text="more"
@@ -235,9 +232,9 @@ export function SkillsPage() {
             <p>
               I'm obsessed with creating{" "}
               <span className="emphasis-text">full-stack</span> projects. I had
-              started out with <span className="tech-text">MERN</span> projects,
+              started with the <span className="tech-text">MERN</span> stack,
               but now love the simplicity of{" "}
-              <span className="tech-text">SQL</span> databases.
+              <span className="tech-text">SQL</span>.
             </p>
             <p>
               I started out in <span className="emphasis-text">frontend</span>,
