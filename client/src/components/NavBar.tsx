@@ -2,13 +2,11 @@ import Logo from "/logo.webp";
 import { TextLink } from "./TextLink";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { useState } from "react";
 
-type NavBarProps = {
-  isHamburgerOpen: boolean;
-  setIsHamburgerOpen: (isOpen: boolean) => void;
-};
+export function NavBar() {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
   return (
     <nav className="fixed top-0 w-full h-24 pt-6 md:w-5/6 bg-purple-950a backdrop-blur-2xl">
       <div className="flex items-center justify-between w-full h-12">
@@ -28,7 +26,9 @@ export function NavBar({ isHamburgerOpen, setIsHamburgerOpen }: NavBarProps) {
               : "hidden"
           } md:flex`}
         >
-          {isHamburgerOpen && <img src={Logo} alt="logo" className="w-10 md:w-12" />}
+          {isHamburgerOpen && (
+            <img src={Logo} alt="logo" className="w-10 md:w-12" />
+          )}
           <TextLink
             text="Home"
             tabIndex={1}
