@@ -18,6 +18,7 @@ const imageLookup = {
   Python: "/python.svg",
   Rust: "/rust.svg",
   Vite: "/vite.svg",
+  Vercel: "/vercel.svg",
   Supabase: "/supabase.svg",
 };
 

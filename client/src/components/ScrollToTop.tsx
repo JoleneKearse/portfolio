@@ -5,7 +5,13 @@ export function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const handleScroll = () => {
+      if (document.scrollingElement) {
+        document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    handleScroll();
   }, [pathname]);
 
   return null;

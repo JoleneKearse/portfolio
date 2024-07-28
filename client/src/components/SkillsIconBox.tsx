@@ -3,8 +3,8 @@ import { SkillsIcon } from "./SkillsIcon";
 
 export function SkillsIconBox({ skills }: Skills) {
   return (
-    <article className="">
-      <ul className="flex flex-wrap gap-4 my-6">
+    <article>
+      <ul className="flex flex-wrap gap-4 p-2 my-6 bg-purple-900">
         <SkillsIcon skills={skills} />
       </ul>
     </article>
