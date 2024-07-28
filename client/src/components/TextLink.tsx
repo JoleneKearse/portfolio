@@ -28,7 +28,11 @@ export function TextLink({
     <NavLink
       to={text.toLowerCase() === "home" ? "/" : text.toLowerCase()}
       onClick={handleClick}
-      className="inline-block font-semibold tracking-wide hover:text-[#0000] transition ease-in cursor-pointer hover:bg-gradient-to-r from-pink-600 to-purple-500 hover:bg-clip-text hover:font-bold"
+      className={({ isActive }) =>
+        `inline-block font-semibold tracking-wide hover:text-[#0000] transition ease-in cursor-pointer hover:bg-gradient-to-r from-pink-600 to-purple-500 hover:bg-clip-text hover:font-bold ${
+          isActive ? "text-purple-500" : ""
+        }`
+      }
       tabIndex={tabIndex}
     >
       {text}
