@@ -45,7 +45,7 @@ export function ContactPage() {
           </div>
         </div>
         
-        <div className="w-1/2 mx-auto my-auto rounded-full bg-neutral-400 md:w-3/5 md:h-fit">
+        <div className="w-1/2 mx-auto my-auto rounded-s-full bg-neutral-400 md:w-3/5">
           <img
             src={Jolene}
             alt="Jolene Kearse, Frontend and Software Engineer"
