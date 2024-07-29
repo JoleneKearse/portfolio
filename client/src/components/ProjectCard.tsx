@@ -10,7 +10,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <>
         <article
           key={project.id}
-          className="flex flex-col justify-center p-10 my-10 space-y-6 text-center bg-purple-900 rounded-2xl hover:shadow-xl hover:shadow-inner hover:shadow-purple-500 md:my-6"
+          className="grid grid-rows-5 p-10 space-y-2 text-center bg-purple-900 justify-scenter grid-row rounded-2xl hover:shadow-xl hover:shadow-inner hover:shadow-purple-500 md:my-6"
         >
           <h3 className="text-2xl text-purple-300">{project.title}</h3>
           <img
