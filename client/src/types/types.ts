@@ -15,4 +15,5 @@ export type Project = {
   live: string;
   description: string;
   techUsed: Icon[];
+  video?: string;
 }
