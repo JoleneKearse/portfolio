@@ -2,7 +2,7 @@ import { Project } from "../types/types";
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: "1",
     title: "Change the Luminosity",
     img: "/screenshot-color-tool.png",
     github: "https://github.com/JoleneKearse/color_tool",
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 2,
+    id: "2",
     title: "Late Night Food",
     img: "/screenshot-late-night-food.png",
     github: "https://github.com/JoleneKearse/Late-Night-Food-Ordering-App",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 3,
+    id: "3",
     title: "Meme Generator",
     img: "/screenshot-meme-generator.png",
     github: "https://github.com/JoleneKearse/meme_generator",

@@ -11,11 +11,11 @@ export function ProjectsPage() {
       <p>
         These are placemark projects, but I'll get my full-stack ones up soon!
       </p>
-      <div className="flex flex-col md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-2">
+      <ul className="flex flex-col md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-2">
       {projects.map((project: Project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
-      </div>
+      </ul>
     </section>
   );
 }

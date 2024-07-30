@@ -8,7 +8,7 @@ export type Skills = {
 }
 
 export type Project = {
-  id: number;
+  id: string;
   title: string;
   img: string;
   github: string;
