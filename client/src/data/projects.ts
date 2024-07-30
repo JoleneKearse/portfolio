@@ -15,7 +15,7 @@ export const projects: Project[] = [
       { img: "JavaScript", alt: "JavaScript" },
     ],
     challenges: "I handled all the possible ways a user could enter a hex code, like with or without the # sign, and 3 or 6 characters.\n I implemented UI features, like a gradient on the slider as a visual cue of it's purpose, and a copy button for the altered hex code.",
-    video: "../assets/change-the-luminosity.mp4"
+    video: "../assets/change-the-luminosity.mp4",
   },
   {
     id: "2",
