@@ -25,7 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="grid place-content-center">
           <SkillsIconBox skills={project.techUsed} />
         </div>
-        <p>{project.description}</p>
+        <p>{project.why}</p>
         
         </Link>
       </li>

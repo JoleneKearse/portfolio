@@ -11,9 +11,11 @@ export type Project = {
   id: string;
   title: string;
   img: string;
+  imgAlt?: string;
   github: string;
   live: string;
-  description: string;
+  why: string;
   techUsed: Icon[];
   video?: string;
+  challenges?: string;
 }
