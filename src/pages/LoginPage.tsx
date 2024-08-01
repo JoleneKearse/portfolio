@@ -1,3 +1,5 @@
+import React from "react";
+
 import { supabase } from "../services/supabaseClient";
 
 import { FaGithub } from "react-icons/fa6";
