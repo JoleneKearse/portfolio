@@ -1,5 +1,3 @@
-// import { ComponentType } from "react";
-
 import { ReactNode } from "react";
 
 type SocialLinkProps = {
