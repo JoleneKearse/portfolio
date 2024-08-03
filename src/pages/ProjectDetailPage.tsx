@@ -22,7 +22,7 @@ export function ProjectDetailPage() {
   return (
     <>
       <Heading text={project.title} />
-      <article className="relative space-y-6">
+      <article className="z-1 relative space-y-6">
         <img src={project.img} alt={project.imgAlt} title={project.imgAlt} />
 
         <h2 className="font-alegreya text-3xl text-neutral-600">The why</h2>
@@ -65,8 +65,13 @@ export function ProjectDetailPage() {
           </button>
         </div>
         {isModalOpen && (
-          <div className="absolute top-50 bottom-0 left-0 right-0 bg-purple-950 outline">
-            <button className="left-0" onClick={() => setIsModalOpen(!isModalOpen)}><FaRegCircleXmark size={32} /></button>
+          <div className="top-50 absolute bottom-0 left-0 right-0 bg-purple-950 outline">
+            <button
+              className="left-0"
+              onClick={() => setIsModalOpen(!isModalOpen)}
+            >
+              <FaRegCircleXmark size={32} />
+            </button>
             <video src={project.video} controls width="100%"></video>
           </div>
         )}

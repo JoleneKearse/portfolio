@@ -8,7 +8,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { LoginPage } from "./pages/LoginPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AdminPage } from "./pages/AdminPage";
-import { AuthCallback } from "./components/AuthCallback";
+// import { AuthCallback } from "./components/AuthCallback";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
-          <Route path="/auth/v1/callback?" element={<AuthCallback />} />
+          {/* <Route path="/auth/v1/callback?" element={<AuthCallback />} /> */}
         </Route>
       </Routes>
     </>
