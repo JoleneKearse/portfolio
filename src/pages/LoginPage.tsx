@@ -4,10 +4,10 @@ import { FaGithub } from "react-icons/fa6";
 
 export const LoginPage = () => {
   const handleGithubLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "https://www.jolenekearse.dev/auth/v1/callback",
+        redirectTo: "https://jolenekearse.dev/admin",
       },
     });
     if (error) {
