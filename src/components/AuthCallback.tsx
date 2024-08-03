@@ -8,7 +8,7 @@ export const AuthCallback = () => {
   useEffect(() => {
     const handleAuth = async () => {
       // Check if a session exists
-      const session = supabase.auth.getSession();
+      const session = await supabase.auth.getSession();
 
       if (session) {
         // Session exists, navigate to the desired page
