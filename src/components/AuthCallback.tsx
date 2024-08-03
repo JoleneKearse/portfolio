@@ -11,16 +11,13 @@ export const AuthCallback = () => {
 
       if (error) {
         console.error("Error fetching session:", error.message);
-        // Handle session error
         navigate("/login");
         return;
       }
 
       if (data.session) {
-        // Session exists, navigate to the desired page
         navigate("/admin");
       } else {
-        // No session, redirect to login
         console.error("No session found. Redirecting to login.");
         navigate("/login");
       }

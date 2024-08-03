@@ -15,8 +15,12 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
         data: { user },
       } = await supabase.auth.getUser();
       setIsAdmin(!!user);
+      console.log(user);
     };
-    checkAuth();
+    // checkAuth();
+    window.addEventListener("hashchange", function() {
+      checkAuth();
+    })
   }, []);
 
   if (isAdmin === null) {

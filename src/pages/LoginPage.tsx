@@ -3,6 +3,7 @@ import { supabase } from "../services/supabaseClient";
 import { FaGithub } from "react-icons/fa6";
 
 export const LoginPage = () => {
+  console.log("Reached LoginPage");
   const handleGithubLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
@@ -10,6 +11,7 @@ export const LoginPage = () => {
         redirectTo: "https://ffgnpehvawdrfattmzme.supabase.co/auth/v1/callback",
       },
     });
+    console.log(supabase.auth);
     if (error) {
       console.error(error);
       alert("Failed to login with GitHub");
