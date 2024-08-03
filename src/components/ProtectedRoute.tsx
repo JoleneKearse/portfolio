@@ -18,12 +18,13 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
       console.log(user);
     };
     // checkAuth();
-    window.addEventListener("hashchange", function() {
+    window.addEventListener("hashchange", function () {
       checkAuth();
-    })
+    });
   }, []);
 
   if (isAdmin === null) {
+    console.log("failed");
     return <div>Loading...</div>;
   }
   return isAdmin ? children : <Navigate to="/login" />;
