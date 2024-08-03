@@ -21,7 +21,14 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminPage />
+              </ProtectedRoute>
+            }
+          />
           {/* <Route path="/auth/v1/callback?" element={<AuthCallback />} /> */}
         </Route>
       </Routes>
@@ -30,4 +37,3 @@ function App() {
 }
 
 export default App;
-
