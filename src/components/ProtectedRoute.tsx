@@ -7,7 +7,7 @@ type ProtectedRouteProps = {
 };
 
 export function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const [isAdmin, setIsAdmin] = useState<boolean | null>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
 
   useEffect(() => {
     const checkAuth = async () => {
