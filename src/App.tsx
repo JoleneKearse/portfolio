@@ -21,6 +21,7 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/auth/v1/callback?" element={<AuthCallback />} />
           <Route
             path="/admin"
             element={
@@ -29,7 +30,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/auth/v1/callback?" element={<AuthCallback />} />
         </Route>
       </Routes>
     </>

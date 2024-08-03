@@ -2,12 +2,15 @@ import { useEffect } from "react";
 import { supabase } from "../services/supabaseClient";
 import { useNavigate } from "react-router-dom";
 
+import { AdminPage } from "../pages/AdminPage";
+
 export const AuthCallback = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkSession = async () => {
       const { data, error } = await supabase.auth.getSession();
+      console.log("Session:", data.session);
 
       if (error) {
         console.error("Error fetching session:", error.message);
