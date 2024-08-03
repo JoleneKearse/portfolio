@@ -6,21 +6,27 @@ export const AuthCallback = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleAuth = async () => {
-      // Check if a session exists
-      const session = await supabase.auth.getSession();
+    const checkSession = async () => {
+      const { data, error } = await supabase.auth.getSession();
 
-      if (session) {
+      if (error) {
+        console.error("Error fetching session:", error.message);
+        // Handle session error
+        navigate("/login");
+        return;
+      }
+
+      if (data.session) {
         // Session exists, navigate to the desired page
         navigate("/admin");
       } else {
-        // Handle any session error, log it, and navigate to login
-        console.error("Session not found. Redirecting to login.");
+        // No session, redirect to login
+        console.error("No session found. Redirecting to login.");
         navigate("/login");
       }
     };
 
-    handleAuth();
+    checkSession();
   }, [navigate]);
 
   return <div>Loading...</div>;
