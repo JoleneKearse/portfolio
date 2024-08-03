@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { supabase } from "../services/supabaseClient";
 import { useNavigate } from "react-router-dom";
 
-import { AdminPage } from "../pages/AdminPage";
-
 export const AuthCallback = () => {
   const navigate = useNavigate();
 
