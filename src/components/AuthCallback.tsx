@@ -7,17 +7,16 @@ export const AuthCallback = () => {
 
   useEffect(() => {
     const handleAuth = async () => {
-      const url = new URL(window.location.href);
-      const authCode = url.searchParams.get("code");
-      if (authCode) {
-        const { error } = await supabase.auth.exchangeCodeForSession(authCode);
-        if (error) {
-          console.error("Error exchanging code for session:", error);
-        } else {
-          navigate("/admin");
-        }
+      // Check if a session exists
+      const session = supabase.auth.getSession();
+
+      if (session) {
+        // Session exists, navigate to the desired page
+        navigate("/admin");
       } else {
-        console.error("No auth code found in the URL.");
+        // Handle any session error, log it, and navigate to login
+        console.error("Session not found. Redirecting to login.");
+        navigate("/login");
       }
     };
 

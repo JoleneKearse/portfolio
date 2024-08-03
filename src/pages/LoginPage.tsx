@@ -7,7 +7,7 @@ export const LoginPage = () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "https://www.jolenekearse.dev/auth/v1/callback",
+        redirectTo: "https://ffgnpehvawdrfattmzme.supabase.co/auth/v1/callback",
       },
     });
     if (error) {
