@@ -26,18 +26,12 @@ export const AuthCallback = () => {
 
       const accessToken = urlParams.get("access_token");
       const refreshToken = urlParams.get("refresh_token");
-      // const expiresIn = urlParams.get("expires_in");
 
       if (accessToken && refreshToken) {
         try {
-          // const parsedExpiresIn = parseInt(expiresIn, 10);
-          // if (isNaN(parsedExpiresIn)) {
-          //   throw new Error("Invalid expires_in value");
-          // }
           const { error } = await supabase.auth.setSession({
             access_token: accessToken,
             refresh_token: refreshToken,
-            // expires_in: parsedExpiresIn,
           });
 
           if (error) {
