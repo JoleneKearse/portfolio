@@ -7,19 +7,48 @@ export const AuthCallback = () => {
 
   useEffect(() => {
     const checkSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      console.log("Session:", data.session);
+      // const { data, error } = await supabase.auth.getSession();
+      // console.log("Session:", data.session);
 
-      if (error) {
-        console.error("Error fetching session:", error.message);
-        navigate("/login");
-        return;
-      }
+      // if (error) {
+      //   console.error("Error fetching session:", error.message);
+      //   navigate("/login");
+      //   return;
+      // }
 
-      if (data.session) {
-        navigate("/admin");
+      // if (data.session) {
+      //   navigate("/admin");
+      // } else {
+      //   console.error("No session found. Redirecting to login.");
+      //   navigate("/login");
+      // }
+      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+
+      const accessToken = urlParams.get("access_token");
+      const refreshToken = urlParams.get("refresh_token");
+      const expiresIn = urlParams.get("expires_in");
+
+      if (accessToken) {
+        try {
+          const { error } = await supabase.auth.setSession({
+            access_token: accessToken,
+            expires_in: expiresIn,
+            refresh_token: refreshToken,
+          });
+
+          if (error) {
+            console.error("Error setting session:", error);
+            navigate("/login");
+          } else {
+            // Redirect to the admin page after the session is set
+            navigate("/admin");
+          }
+        } catch (err) {
+          console.error("Unexpected error setting session:", err);
+          navigate("/login");
+        }
       } else {
-        console.error("No session found. Redirecting to login.");
+        console.error("No access token found. Redirecting to login.");
         navigate("/login");
       }
     };
@@ -27,5 +56,5 @@ export const AuthCallback = () => {
     checkSession();
   }, [navigate]);
 
-  return <div>Loading...</div>;
+  return <div>Loading AuthCallback...</div>;
 };

@@ -10,6 +10,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
 
   useEffect(() => {
+    console.log("checking auth")
     const checkAuth = async () => {
       const {
         data: { user },
@@ -17,15 +18,15 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
       setIsAdmin(!!user);
       console.log(user);
     };
-    // checkAuth();
-    window.addEventListener("hashchange", function () {
-      checkAuth();
-    });
+    checkAuth();
+    // window.addEventListener("hashchange", function () {
+    //   checkAuth();
+    // });
   }, []);
 
   if (isAdmin === null) {
-    console.log("failed");
-    return <div>Loading...</div>;
+    console.log("setAdmin failed");
+    return <div>Loading ProtectedRoute...</div>;
   }
   return isAdmin ? children : <Navigate to="/login" />;
 }
