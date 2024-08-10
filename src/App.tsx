@@ -9,6 +9,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AdminPage } from "./pages/AdminPage";
 import { AuthCallback } from "./components/AuthCallback";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/auth/v1/callback?" element={<AuthCallback />} />
+          <Route path="/*" element={<NotFoundPage />} />
           <Route
             path="/admin"
             element={
