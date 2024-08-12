@@ -10,7 +10,7 @@ export function AdminPage() {
         rel="noopener noreferrer"
         className="font-alegreya font-extrabold text-2xl text-purple-500 text-center w-full mx-auto block hover:text-purple-400"
       >
-        Repos
+        Go to repos
       </a>
       <form className="space-y-8 text-neutral-300 font-roboto-mono py-10">
         <input

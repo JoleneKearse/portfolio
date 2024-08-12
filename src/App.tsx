@@ -5,10 +5,7 @@ import { SkillsPage } from "./pages/SkillsPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { ProjectDetailPage } from "./pages/ProjectDetailPage";
 import { ContactPage } from "./pages/ContactPage";
-import { LoginPage } from "./pages/LoginPage";
-import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AdminPage } from "./pages/AdminPage";
-import { AuthCallback } from "./components/AuthCallback";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
@@ -21,17 +18,8 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/auth/v1/callback?" element={<AuthCallback />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/*" element={<NotFoundPage />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminPage />
-              </ProtectedRoute>
-            }
-          />
         </Route>
       </Routes>
     </>
