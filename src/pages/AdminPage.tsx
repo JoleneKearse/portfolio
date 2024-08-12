@@ -19,6 +19,7 @@ export function AdminPage() {
           id="title"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
           placeholder="Title"
+          required
         />
         <input
           type="text"
@@ -26,13 +27,14 @@ export function AdminPage() {
           id="img"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
           placeholder="Image"
+          required
         />
         <input
           type="text"
           name=""
           id="video"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
-          placeholder="Video Link"
+          placeholder="Video Link (Optional)"
         />
         <input
           type="text"
@@ -40,6 +42,7 @@ export function AdminPage() {
           id="github"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
           placeholder="Github"
+          required
         />
         <input
           type="text"
@@ -47,6 +50,7 @@ export function AdminPage() {
           id="live"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
           placeholder="Deployed Link"
+          required
         />
         <textarea
           rows={5}
@@ -54,12 +58,14 @@ export function AdminPage() {
           spellCheck="true"
           className="bg-purple-800 py-2 px-4 rounded-lg w-full placeholder:text-neutral-600 hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl focus:shadow-inner focus:shadow-purple-400 focus:shadow-xl focus:outline-none"
           placeholder="What problems does the project solve?"
+          required
         ></textarea>
         <select
           name=""
           id="techUsed"
           className="bg-purple-800 w-2/5 outline-none hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl p-2 block mx-auto"
           multiple
+          required
         >
           <option value="">techUsed</option>
           <option value="React">React</option>
