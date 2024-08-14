@@ -11,7 +11,7 @@ export function AddProjects() {
       >
         Go to repos
       </a></span></h2>
-      
+      <p className="mt-6">Ready to add an app that solves a real-world problem and looks amazing.</p>
       <ProjectForm />
     </>
   )

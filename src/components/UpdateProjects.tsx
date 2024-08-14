@@ -12,7 +12,10 @@ export function UpdateProjects() {
         Go to repos
       </a></span></h2>
       <p className="mt-6">Make them say 'Wow!'  Explain the why you did it and how it helps make lives easier!</p>
-      
+      <select id="projectToUpdate" className="bg-purple-800 w-2/5 outline-none hover:shadow-inner hover:shadow-purple-500 border-none hover:shadow-xl p-2 block mx-auto"
+      required>
+        
+      </select>
       <ProjectForm />
     </>
   )

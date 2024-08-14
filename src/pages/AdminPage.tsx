@@ -3,6 +3,7 @@ import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import { UpdateProjects } from "../components/UpdateProjects";
 import { AddProjects } from "../components/AddProjects";
+import { DeleteProjects } from "../components/DeleteProjects";
 
 export function AdminPage() {
   const [isAwesomifying, setIsAwesomifying] = useState(false);
@@ -39,6 +40,7 @@ export function AdminPage() {
 
       {isUpdating && <UpdateProjects />}
       {isAdding && <AddProjects />}
+      {isDeleting && <DeleteProjects />}
     </>
   );
 }
