@@ -17,7 +17,7 @@ export function HomePage() {
         </div>
         <div className="mt-20 space-y-6 text-balance md:mt-0 md:flex md:flex-col md:justify-center md:gap-4">
           <p>I'm a Frontend Developer based in Canada specializing in <span className="tech-text">React</span>, <span className="tech-text">JavaScript</span>, and <span className="tech-text">TypeScript</span> looking for a remote role.</p>
-          <p>Thank you for checking out my portfolio.  I'll show you that I'm a <span className="emphasis-text">Frontend+ Developer</span>!</p>
+          <p>Thank you for checking out my portfolio.  I'll show you that I'm a <span className="emphasis-text">Frontend <span className="tech-text font-extrabold -ml-1">+</span> Developer</span>!</p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
