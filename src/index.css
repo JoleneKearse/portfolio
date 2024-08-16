@@ -5,10 +5,18 @@
 @layer base {
   @font-face {
     font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+    font-style: thin;
+    font-weight: 100;
     font-display: swap;
-    src: url(/fonts/Roboto-Medium.ttf) format('truetype');
+    src: url(/fonts/Roboto-Thin.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: light;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Roboto-Light.ttf) format('truetype');
   }
 
   @font-face {

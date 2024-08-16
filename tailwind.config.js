@@ -50,7 +50,7 @@ export default {
     extend: {
       backgroundImage: (theme) => ({
         "gradient-primary": `linear-gradient(to right, ${theme(
-          "colors.pink"
+          "colors.pink",
         )}, ${theme("colors.purple")})`,
         stars: "url('/background.png')",
         code: "url('/ts-code.webp')",
@@ -61,6 +61,8 @@ export default {
         alegreya: ["Alegreya", "serif"],
       },
       fontWeight: {
+        thin: 100,
+        light: 300,
         normal: 400,
         bold: 700,
       },
