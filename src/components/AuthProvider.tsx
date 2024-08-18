@@ -11,6 +11,7 @@ import { OAuthResponse } from "../types/types";
 
 type AuthContextType = {
   user: User | null;
+  session: Session | null;
   signIn: () => Promise<{
     data: OAuthResponse | null;
     error: AuthError | null;
@@ -77,6 +78,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   if (isLoading) {
     return <div>Loading AdminPage...</div>;
   }
+
+  // logged session, because Vercel deployment fails otherwise
+  console.log("Session: ", session);
 
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>
