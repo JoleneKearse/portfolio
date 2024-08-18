@@ -1,4 +1,4 @@
-import { Session, User, AuthError } from "@supabase/supabase-js";
+import { User, AuthError } from "@supabase/supabase-js";
 import {
   createContext,
   ReactNode,
@@ -11,7 +11,6 @@ import { OAuthResponse } from "../types/types";
 
 type AuthContextType = {
   user: User | null;
-  session: Session | null;
   signIn: () => Promise<{
     data: OAuthResponse | null;
     error: AuthError | null;
@@ -35,14 +34,12 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         console.log("session onAuthStateChange: ", session);
-        setSession(session);
         if (session) {
           console.log("Setting user: ", session.user);
           setUser(session.user);
@@ -72,15 +69,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const signOut = async () => {
     await supabase.auth.signOut();
     setUser(null);
-    setSession(null);
   };
 
   if (isLoading) {
     return <div>Loading AdminPage...</div>;
   }
-
-  // logged session, because Vercel deployment fails otherwise
-  console.log("Session: ", session);
 
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>
