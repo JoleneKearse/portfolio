@@ -1,3 +1,5 @@
+import { Provider } from "@supabase/supabase-js";
+
 export type Icon = {
   img: string;
   alt: string;
@@ -18,4 +20,9 @@ export type Project = {
   techUsed: Icon[];
   video?: string;
   challenges?: string;
+}
+
+export type OAuthResponse = {
+  provider: Provider;
+  url: string | null;
 }

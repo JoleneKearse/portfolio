@@ -7,6 +7,7 @@ import { ProjectDetailPage } from "./pages/ProjectDetailPage";
 import { ContactPage } from "./pages/ContactPage";
 import { AdminPage } from "./pages/AdminPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { LoginPage } from "./pages/LoginPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Route>
