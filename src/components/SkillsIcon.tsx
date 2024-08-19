@@ -1,8 +1,7 @@
 import imageLookup from "../utils/imageLookup";
-import { Icon } from "../types/types";
 
 type SkillsIconProps = {
-  skills: Icon[];
+  skills: string[];
 };
 
 export function SkillsIcon({ skills }: SkillsIconProps) {
@@ -11,9 +10,9 @@ export function SkillsIcon({ skills }: SkillsIconProps) {
       {skills.map((skill, index) => (
         <li key={index}>
           <img
-            src={imageLookup[skill.img as keyof typeof imageLookup]}
-            alt={skill.alt}
-            title={skill.alt}
+            src={imageLookup[skill as keyof typeof imageLookup]}
+            alt={skill}
+            title={skill}
             className="w-8"
           />
         </li>

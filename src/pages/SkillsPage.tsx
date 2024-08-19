@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Heading } from "../components/Heading";
 import { SkillsIconBox } from "../components/SkillsIconBox";
-import { Icon } from "../types/types";
 import { DropdownButton } from "../components/DropdownButton";
 
 type SetStateFunction = React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,33 +10,9 @@ export function SkillsPage() {
   const [isOneDropdownOpen, setIsOneDropdownOpen] = useState(false);
   const [isTwoDropdownOpen, setIsTwoDropdownOpen] = useState(false);
   const [isThreeDropdownOpen, setIsThreeDropdownOpen] = useState(false);
-  const mainSkills: Icon[] = [
-    { img: "React", alt: "React" },
-    { img: "JavaScript", alt: "JavaScript" },
-    { img: "TypeScript", alt: "TypeScript" },
-    { img: "Tailwind", alt: "Tailwind" },
-    { img: "Git", alt: "Git" },
-    { img: "Vite", alt: "Vite" },
-    { img: "HTML5", alt: "HTML5" },
-    { img: "CSS3", alt: "CSS3" },
-    { img: "Linux", alt: "Linux" },
-  ];
-  const futureProofingSkills: Icon[] = [
-    { img: "TypeScript", alt: "TypeScript" },
-    { img: "Rust", alt: "Rust" },
-  ];
-  const allOtherSkills: Icon[] = [
-    { img: "Python", alt: "Python" },
-    { img: "Node", alt: "NodeJS" },
-    { img: "Express", alt: "Express" },
-    { img: "PostgreSQL", alt: "PostgreSQL" },
-    { img: "Supabase", alt: "Supabase" },
-    { img: "Firebase", alt: "Firebase" },
-    { img: "MongoDB", alt: "MongoDB" },
-    { img: "Figma", alt: "Figma" },
-    { img: "Photoshop", alt: "Photoshop" },
-    { img: "Illustrator", alt: "Illustrator" },
-  ];
+  const mainSkills: string[] = ["React", "JavaScript", "TypeScript", "Tailwind", "Git", "Vite", "HTML5", "CSS3", "Linux"];
+  const futureProofingSkills: string[] = ["TypeScript", "Rust"];
+  const allOtherSkills: string[] = ["Python", "Node", "Express", "PostgreSQL", "Supabase", "Firebase", "MongoDB", "Figma", "Photoshop", "Illustrator"];
   const handleClick = (state: boolean, setter: SetStateFunction) => {
     setter(!state);
   };

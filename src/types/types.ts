@@ -1,12 +1,7 @@
 import { Provider } from "@supabase/supabase-js";
 
-export type Icon = {
-  img: string;
-  alt: string;
-}
-
 export type Skills = {
-  skills: Icon[];
+  skills: string[];
 }
 
 export type Project = {
@@ -17,7 +12,7 @@ export type Project = {
   github: string;
   live: string;
   why: string;
-  techUsed: Icon[];
+  techUsed: string[];
   video?: string;
   challenges?: string;
 }
