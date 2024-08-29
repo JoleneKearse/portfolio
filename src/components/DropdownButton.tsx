@@ -7,7 +7,7 @@ type DropdownButtonProps = {
 
 export function DropdownButton({ text, onClick }: DropdownButtonProps) {
   return (
-    <button className="w-1/3 text-left text-purple-300 hover:text-neutral-500" onClick={onClick}>
+    <button className="w-2/5 text-left text-purple-300 hover:text-neutral-500" onClick={onClick}>
       Read {text} <FaChevronDown className="inline-block mb-1 ml-4" />
     </button>
   );
