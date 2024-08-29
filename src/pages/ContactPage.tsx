@@ -15,45 +15,41 @@ export function ContactPage() {
   return (
     <section>
       <Heading text="Contact Jolene" />
-      <div className="grid grid-cols-2 gap-6 font-normal mb-28">
-        <div className="rounded-xl bg-purple-600 p-10">
-          <p>
-            Click the email icon to message me directly or the copy button if
-            you're on a public device.
-          </p>
-          <div className="flex flex-col gap-2 justify-center items-center">
-            <a href="mailto:pharaohnutz@gmail.com" className="text-purple-900">
-              <FaEnvelopeOpenText
-                className="my-6 hover:text-neutral-500"
-                size="36"
-                title="Email direct from your device"
-              />
-            </a>
-            <div className="flex items-center gap-2 text-purple-900 hover:text-neutral-500">
-              <p title="I'm quite attached to this email that relates to my early love of Ancient Egyptian history.">
-                pharaohnutz@gmail.com
-              </p>
-              <button onClick={handleCopy}>
-                <FaCopy size="24" title="copy the email" />
-              </button>
-            </div>
+      <div className="flex flex-col p-6 bg-gradient-to-br from-pink-600a via-purple-600a to-purple-400 rounded-2xl">
+        <p className="font-thin">
+          Click the email icon to message me directly or the copy button if
+          you're on a public device.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 md:justify-between my-4 md:my-8">
+          <a href="mailto:pharaohnutz@gmail.com">
+            <FaEnvelopeOpenText
+              className=" text-purple-300 hover:text-neutral-900"
+              size="72"
+              title="Email direct from your device"
+            />
+          </a>
+          <div className="flex items-center gap-2 text-2xl text-purple-300 hover:text-neutral-900">
+            <p title="I'm quite attached to this email that relates to my early love of Ancient Egyptian history.">
+              pharaohnutz@gmail.com
+            </p>
+            <button onClick={handleCopy}>
+              <FaCopy size="24" title="copy the email" />
+            </button>
           </div>
         </div>
-        <div className="space-between flex flex-col space-y-6 rounded-xl bg-pink-700 p-10">
-          <p>Or connect / DM me on LinkedIn.</p>
-          <p className="font-light">And check out my daily videos!</p>
-          <a
-            href="https://www.linkedin.com/in/jolene-kearse-2562ba218/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 text-center text-purple-900 hover:text-neutral-500 flex justify-center"
-          >
-            <FaLinkedin size="36" />
-          </a>
+        <p className="col-span-2 font-thin">
+          Or let's become LinkIn connections! Send a request and/or DM me.
+        </p>
+        <div className="flex justify-center">
+          <FaLinkedin
+            className="my-6 text-purple-300 hover:text-neutral-900 -mb-1"
+            size="74"
+            title="Email direct from your device"
+          />
         </div>
       </div>
-      <div className="grid md:grid-cols-2">
-        <div className="space-y-6">
+      <div className="my-28 grid md:grid-cols-2">
+        <div className="space-y-6 mb-10 md:mb-0">
           <p>
             Looking for your <span className="emphasis-text">next hire</span>?
             I'm in your candidate! I'm all set to add value to your team. And
