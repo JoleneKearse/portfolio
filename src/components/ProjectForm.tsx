@@ -1,6 +1,6 @@
 import { FormEvent, useRef } from "react";
-import { supabase } from "../services/supabaseClient";
 import { Project } from "../types/types";
+import { addProject, handleFileUpload } from "../services/projectActions";
 
 export function ProjectForm() {
   const titleRef = useRef<HTMLInputElement>(null);
@@ -16,18 +16,31 @@ export function ProjectForm() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
+    // handle image and video uploads
+    const imgFile = imgRef.current?.files?.[0];
+    const videoFile = videoRef.current?.files?.[0];
+
+    const imgPath = imgFile
+      ? await handleFileUpload(imgFile, "jolene-kearse-projects-images")
+      : "";
+    const videoPath = videoFile
+      ? await handleFileUpload(videoFile, "jolene-kearse-projects-videos")
+      : "";
+
     const newProject: Omit<Project, "id"> = {
       title: titleRef.current!.value,
-      img: imgRef.current?.value as string || "",
-      imgAlt: imgAltRef.current?.value as string || "",
+      img: imgPath || "",
+      imgAlt: (imgAltRef.current?.value as string) || "",
       github: githubRef.current!.value,
       live: liveRef.current!.value,
-      why: whyRef.current?.value as string || "",
+      why: (whyRef.current?.value as string) || "",
       techUsed: [] as string[],
-      video: videoRef.current?.value as string || "",
-      challenges: challengesRef.current?.value as string || "",
+      video: videoPath || "",
+      challenges: (challengesRef.current?.value as string) || "",
+      user_id: "fabd38a7-9f69-4e2b-afb3-14df4d2d73b1",
     };
 
+    // get the selected tech used
     if (techUsedRef !== null) {
       const selectedTech: string[] = [];
       if (techUsedRef.current) {
@@ -41,7 +54,8 @@ export function ProjectForm() {
       newProject.techUsed = selectedTech;
     }
 
-    const { data, error } = await supabase.from("projects").insert([newProject]);
+    // add a project to the database
+    const { data, error } = await addProject(newProject);
 
     if (error) {
       console.error("Error inserting project:", error);
@@ -65,13 +79,13 @@ export function ProjectForm() {
         required
       />
       <input
-        type="text"
+        type="file"
         ref={imgRef}
         name=""
         id="img"
         className="w-full rounded-lg border-none bg-purple-800 px-4 py-2 placeholder:text-neutral-600 hover:shadow-inner hover:shadow-xl hover:shadow-purple-500 focus:shadow-inner focus:shadow-xl focus:shadow-purple-400 focus:outline-none"
         placeholder="Image"
-        required
+        accept="image/*"
       />
       <input
         type="text"
@@ -80,15 +94,15 @@ export function ProjectForm() {
         id="imgAlt"
         className="w-full rounded-lg border-none bg-purple-800 px-4 py-2 placeholder:text-neutral-600 hover:shadow-inner hover:shadow-xl hover:shadow-purple-500 focus:shadow-inner focus:shadow-xl focus:shadow-purple-400 focus:outline-none"
         placeholder="Image Alt Text"
-        required
       />
       <input
-        type="text"
+        type="file"
         ref={videoRef}
         name=""
         id="video"
         className="w-full rounded-lg border-none bg-purple-800 px-4 py-2 placeholder:text-neutral-600 hover:shadow-inner hover:shadow-xl hover:shadow-purple-500 focus:shadow-inner focus:shadow-xl focus:shadow-purple-400 focus:outline-none"
         placeholder="Video Link (Optional)"
+        accept="video/*"
       />
       <input
         type="text"

@@ -15,6 +15,7 @@ export type Project = {
   techUsed: string[];
   video?: string;
   challenges?: string;
+  user_id: string;
 }
 
 export type OAuthResponse = {
