@@ -7,6 +7,13 @@ export async function addProject(projectData: Omit<Project, "id">) {
         .insert([projectData]);
 }
 
+export async function updateProject(projectData: Partial<Project>, id: string) {
+  return await supabase
+    .from("projects")
+    .update(projectData)
+    .eq("id", id);
+}
+
 export async function handleFileUpload(file: File, bucketName: string): Promise<string | null> {
   const { error } = await supabase.storage
     .from(bucketName)
@@ -40,7 +47,20 @@ export async function getProjects(): Promise<Project[]> {
     return [];
   }
 
-  console.log("fetched projects from ProjectAction function:", data);
-
   return data || [];
+}
+
+export async function getProjectId(id: string): Promise<Project | null> {
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("id", id);
+
+  if (error) {
+    console.error("Error getting project:", error);
+    alert(`Error getting project: ${error.message}`);
+    return null;
+  }
+
+  return data ? data[0] : null;
 }

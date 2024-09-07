@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <img
           src={project.img}
           alt={project.title}
-          className="mx-auto w-5/6 hover:scale-125 md:w-2/5"
+          className="mx-auto mt-6 w-5/6 hover:scale-125 md:w-2/5"
         />
         <div className="grid place-content-center">
           <SkillsIconBox skills={project.techUsed} />

@@ -6,28 +6,34 @@ import { AddProjects } from "../components/AddProjects";
 import { DeleteProjects } from "../components/DeleteProjects";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../components/AuthProvider";
+import { Mode } from "../types/types";
 
 export function AdminPage() {
   const { user } = useAuth();
   const [isAwesomifying, setIsAwesomifying] = useState(false);
+  const [mode, setMode] = useState<Mode>("add");
   const [isUpdating, setIsUpdating] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const handleUpdate = () => {
     setIsAwesomifying(true);
     setIsUpdating(true);
+    setMode("update");
+    
   };
   const handleAdd = () => {
     setIsAwesomifying(true);
     setIsAdding(true);
+    setMode("add");
   };
   const handleDelete = () => {
     setIsAwesomifying(true);
     setIsDeleting(true);
   };
 
+  // TODO: Remove useEffect if not needed.
   useEffect(() => {
-    console.log("User in AdminPage: ", user);
+    // console.log("User in AdminPage: ", user);
     // alert("User in AdminPage: ", user);
   }, [user]);
 
@@ -49,8 +55,8 @@ export function AdminPage() {
         </>
       )}
 
-      {isUpdating && <UpdateProjects />}
-      {isAdding && <AddProjects />}
+      {isUpdating && <UpdateProjects mode={mode} />}
+      {isAdding && <AddProjects mode={mode} />}
       {isDeleting && <DeleteProjects />}
     </>
   );

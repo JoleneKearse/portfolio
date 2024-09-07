@@ -15,10 +15,13 @@ export type Project = {
   techUsed: string[];
   video?: string;
   challenges?: string;
-  user_id: string;
+  // TODO: Remove the conditional before pushing to production
+  user_id?: string;
 }
 
 export type OAuthResponse = {
   provider: Provider;
   url: string | null;
 }
+
+export type Mode = "update" | "add";
