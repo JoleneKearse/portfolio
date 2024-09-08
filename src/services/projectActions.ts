@@ -14,6 +14,13 @@ export async function updateProject(projectData: Partial<Project>, id: string) {
     .eq("id", id);
 }
 
+export async function deleteProject(id: string) {
+  return await supabase
+    .from("projects")
+    .delete()
+    .eq("id", id);
+}
+
 export async function handleFileUpload(file: File, bucketName: string): Promise<string | null> {
   const { error } = await supabase.storage
     .from(bucketName)
