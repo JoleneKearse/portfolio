@@ -4,7 +4,7 @@ import { Project } from "../types/types";
 import {
   addProject,
   handleFileUpload,
-  updateProject,
+  // updateProject,
 } from "../services/projectActions";
 
 type ProjectFormProps = {
@@ -79,18 +79,19 @@ export function ProjectForm({ selectedProject, mode }: ProjectFormProps) {
         console.log("Project inserted successfully:", data);
         alert("Project inserted successfully!");
       }
-    } else if (selectedProject?.id) {
-      const { data, error } = await updateProject(
-        workingProject
-      );
-      if (error) {
-        console.error("Error updating project:", error);
-        alert(`Error updating project: ${error.message}`);
-      } else {
-        console.log("Project updated successfully:", data);
-        alert("Project updated successfully!");
-      }
     }
+    // } else if (selectedProject?.id) {
+    //   const { data, error } = await updateProject(
+    //     workingProject
+    //   );
+    //   if (error) {
+    //     console.error("Error updating project:", error);
+    //     alert(`Error updating project: ${error.message}`);
+    //   } else {
+    //     console.log("Project updated successfully:", data);
+    //     alert("Project updated successfully!");
+    //   }
+    // }
   };
 
   return (
