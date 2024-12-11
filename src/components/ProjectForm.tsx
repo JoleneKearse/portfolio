@@ -74,18 +74,21 @@ export function ProjectForm({ selectedProject, mode }: ProjectFormProps) {
 
       if (error) {
         console.error("Error inserting project:", error);
+        alert(`Error inserting project: ${error.message}`);
       } else {
         console.log("Project inserted successfully:", data);
+        alert("Project inserted successfully!");
       }
     } else if (selectedProject?.id) {
       const { data, error } = await updateProject(
-        workingProject,
-        selectedProject.id,
+        workingProject
       );
       if (error) {
         console.error("Error updating project:", error);
+        alert(`Error updating project: ${error.message}`);
       } else {
         console.log("Project updated successfully:", data);
+        alert("Project updated successfully!");
       }
     }
   };

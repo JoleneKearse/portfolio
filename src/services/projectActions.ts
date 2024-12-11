@@ -7,11 +7,39 @@ export async function addProject(projectData: Omit<Project, "id">) {
         .insert([projectData]);
 }
 
-export async function updateProject(projectData: Partial<Project>, id: string) {
-  return await supabase
+export async function updateProject(projectData: Partial<Project>) {
+  // return await supabase.rpc("delete_and_readd_project", {
+  //   project_id: projectData.id,
+  //   new_title: projectData.title || null,
+  //   new_img: projectData.img || null,
+  //   new_img_alt: projectData.imgAlt || null,
+  //   new_github: projectData.github || null,
+  //   new_live: projectData.live || null,
+  //   new_why: projectData.why || null,
+  //   new_video: projectData.video || null,
+  //   new_challenges: projectData.challenges || null
+  // });
+  const { data, error: PostgrestError } = await supabase
     .from("projects")
-    .update(projectData)
-    .eq("id", id);
+    .select("*")
+    .eq("id", projectData.id)
+    .single();
+  if (PostgrestError) {
+    console.error("Error getting project:", PostgrestError);
+    alert(`Error getting project: ${PostgrestError.message}`);
+    return;
+  }
+  console.log(data);
+  if (JSON.stringify(data) === JSON.stringify(projectData)) {
+    console.log("No changes detected");
+    return;
+  } else {
+    for (const key in data) {
+      if (data[key] === projectData[key]) {
+        delete data[key as keyof Project];
+      }
+    }
+  }
 }
 
 export async function deleteProject(id: string) {
