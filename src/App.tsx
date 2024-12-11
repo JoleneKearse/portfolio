@@ -8,6 +8,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { AdminPage } from "./pages/AdminPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { LoginPage } from "./pages/LoginPage";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <Analytics />
     </>
   );
 }
