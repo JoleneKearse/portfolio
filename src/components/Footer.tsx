@@ -1,5 +1,5 @@
 import { SocialLink } from "./SocialLink";
-import { FaLinkedin, FaGithub, FaSquareTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 export function Footer() {
