@@ -8,9 +8,11 @@ export function NavBar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full h-24 pt-6 md:w-5/6 bg-purple-950a backdrop-blur-2xl z-10">
-      <div className="flex items-center justify-between w-full h-12">
-        <img src={Logo} alt="logo" className="w-10 md:w-12" />
+    <nav className="fixed top-0 z-10 h-24 w-full bg-purple-950a pt-6 backdrop-blur-2xl md:w-5/6">
+      <div className="flex h-12 w-full items-center justify-between">
+        <a href="https://jolenekearse.dev/">
+          <img src={Logo} alt="logo" className="w-10 md:w-12" />
+        </a>
         <div className={`md:hidden ${isHamburgerOpen ? "hidden" : "block"}`}>
           <button
             onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
@@ -22,12 +24,14 @@ export function NavBar() {
         <div
           className={`flex gap-4 md:gap-6 lg:gap-10 ${
             isHamburgerOpen
-              ? "absolute top-0 bottom-0 block bg-purple-950b backdrop-blur-2xl w-screen h-screen flex-col justify-center items-center"
+              ? "absolute bottom-0 top-0 block h-screen w-screen flex-col items-center justify-center bg-purple-950b backdrop-blur-2xl"
               : "hidden"
           } md:flex`}
         >
           {isHamburgerOpen && (
-            <img src={Logo} alt="logo" className="w-10 md:w-12" />
+            <a href="https://jolenekearse.dev/">
+              <img src={Logo} alt="logo" className="w-10 md:w-12" />
+            </a>
           )}
           <TextLink
             text="Home"
