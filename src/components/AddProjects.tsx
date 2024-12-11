@@ -1,6 +1,12 @@
 import { ProjectForm } from "./ProjectForm";
 
-export function AddProjects() {
+import { Mode } from "../types/types";
+
+type AddProjectsProps = {
+  mode: Mode;
+}
+
+export function AddProjects({ mode }: AddProjectsProps) {
   return (
     <>
       <h2 className="text-4xl pb-2 subpixel-antialiased font-extrabold leading-12 text-neutral-alpha bg-gradient-to-br from-pink-600 via-purple-500 to-purple-400 bg-clip-text font-alegreya">Add Project <span><a
@@ -12,7 +18,7 @@ export function AddProjects() {
         Go to repos
       </a></span></h2>
       <p className="mt-6">Ready to add an app that solves a real-world problem and looks amazing.</p>
-      <ProjectForm />
+      <ProjectForm mode={mode} />
     </>
   )
 }
