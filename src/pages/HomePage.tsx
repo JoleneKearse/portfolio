@@ -11,7 +11,7 @@ export function HomePage() {
         <div className="mx-auto w-2/3 rounded-t-none bg-code bg-cover bg-center bg-no-repeat md:bg-right-top">
           <img
             src={Jolene}
-            alt="Jolene Kearse, Frontend Engineer"
+            alt="Jolene Kearse, Software Engineer"
             className="h-42 mr-20 w-40"
           />
         </div>

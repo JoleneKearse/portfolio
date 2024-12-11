@@ -4,9 +4,9 @@ import { MdEmail } from "react-icons/md";
 
 export function Footer() {
   return (
-    <footer className="absolute w-full bottom-6 md:w-5/6">
+    <footer className="absolute bottom-6 w-full md:w-5/6">
       <div className="flex flex-col flex-wrap items-center justify-between gap-2 md:flex-row">
-        <p className="pr-2 text-sm text-center text-neutral-300">
+        <p className="pr-2 text-center text-sm text-neutral-300">
           &copy; {new Date().getFullYear()} Meet Jolene. All rights reserved.
         </p>
         <ul className="flex gap-3">
@@ -19,11 +19,6 @@ export function Footer() {
             img={<FaLinkedin />}
             title="LinkedIn"
             url="https://www.linkedin.com/in/jolene-kearse-2562ba218/"
-          />
-          <SocialLink
-            img={<FaSquareTwitter />}
-            title="Twitter / X"
-            url="https://x.com/FromJolene"
           />
           <SocialLink
             img={<MdEmail />}
