@@ -9,7 +9,7 @@ import { FaFileVideo } from "react-icons/fa6";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { Project } from "../types/types";
 import { getProjectId } from "../services/projectActions";
-// import changeTheLuminosity from "../assets/change-the-luminosity.mp4";
+
 
 export function ProjectDetailPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +27,6 @@ export function ProjectDetailPage() {
     fetchProject();
   }, [projectId]);
 
-  // console.log(project.video)
 
   if (!project) {
     return <div>Project not found!</div>;
@@ -82,7 +81,6 @@ export function ProjectDetailPage() {
             {project.video && <button
               onClick={() => {
                 setIsModalOpen(!isModalOpen);
-                console.log(project.video);
               }}
               className="flex gap-2 hover:text-neutral-600"
             >

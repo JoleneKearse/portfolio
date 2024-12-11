@@ -20,6 +20,9 @@ const imageLookup = {
   Vite: "/vite.svg",
   Vercel: "/vercel.svg",
   Supabase: "/supabase.svg",
+  ReactRouter: "/reactrouter.svg",
+  Pnpm: "/pnpm.svg",
+  Render: "/render.svg",
 };
 
 export default imageLookup;
