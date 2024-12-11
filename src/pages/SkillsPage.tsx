@@ -10,9 +10,30 @@ export function SkillsPage() {
   const [isOneDropdownOpen, setIsOneDropdownOpen] = useState(false);
   const [isTwoDropdownOpen, setIsTwoDropdownOpen] = useState(false);
   const [isThreeDropdownOpen, setIsThreeDropdownOpen] = useState(false);
-  const mainSkills: string[] = ["React", "JavaScript", "TypeScript", "Tailwind", "Git", "Vite", "HTML5", "CSS3", "Linux"];
-  const futureProofingSkills: string[] = ["TypeScript", "Rust"];
-  const allOtherSkills: string[] = ["Python", "Node", "Express", "PostgreSQL", "Supabase", "Firebase", "MongoDB", "Figma", "Photoshop", "Illustrator"];
+  const mainSkills: string[] = [
+    "React",
+    "JavaScript",
+    "TypeScript",
+    "Tailwind",
+    "Git",
+    "Vite",
+    "HTML5",
+    "CSS3",
+    "Linux",
+  ];
+  const futureProofingSkills: string[] = ["TypeScript", "Rust", "Csharp"];
+  const allOtherSkills: string[] = [
+    "Python",
+    "Node",
+    "Express",
+    "PostgreSQL",
+    "Supabase",
+    "Firebase",
+    "MongoDB",
+    "Figma",
+    "Photoshop",
+    "Illustrator",
+  ];
   const handleClick = (state: boolean, setter: SetStateFunction) => {
     setter(!state);
   };
@@ -20,7 +41,7 @@ export function SkillsPage() {
   return (
     <section>
       <Heading text="Jolene's Skills" />
-      <article className="space-y-6 text-balance max-w-prose">
+      <article className="max-w-prose space-y-6 text-balance">
         <p>
           I appreciate you taking the time out of your busy schedule to check
           out my portfolio. Let me show you in{" "}
@@ -28,7 +49,7 @@ export function SkillsPage() {
           be an <span className="emphasis-text">asset</span>..
         </p>
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          <span className="pr-4 text-5xl font-alegreya text-neutral-600">
+          <span className="pr-4 font-alegreya text-5xl text-neutral-600">
             # 1
           </span>{" "}
           I'm ready to go!
@@ -37,8 +58,8 @@ export function SkillsPage() {
         {!isOneDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              I use these frontend technologies every single day and will immediately
-              employ them for you!
+              I use these frontend technologies every single day and will
+              immediately employ them for you!
             </p>
             <DropdownButton
               text="more"
@@ -104,7 +125,7 @@ export function SkillsPage() {
 
         {/* POINT TWO */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          <span className="pr-4 text-5xl font-alegreya text-neutral-600">
+          <span className="pr-4 font-alegreya text-5xl text-neutral-600">
             # 2
           </span>{" "}
           I'm future proof!
@@ -113,7 +134,8 @@ export function SkillsPage() {
         {!isTwoDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              I go above and beyond present-day requirements by continually updating my repertoire.  
+              I go above and beyond present-day requirements by continually
+              updating my repertoire.
             </p>
             <DropdownButton
               text="more"
@@ -132,8 +154,9 @@ export function SkillsPage() {
               ever have a chance to annoy your customers in the slightest.
             </p>
             <p>
-              For this reason, I've been focusing on{" "}
-              <span className="tech-text">TypeScript</span> &{" "}
+              For this reason, I focused on{" "}
+              <span className="tech-text">TypeScript</span>,{" "}
+              <span className="tech-text">C#</span> &{" "}
               <span className="tech-text">Rust</span>. These are the languages I
               believe offer the most protection, and, thus, are my focus.
             </p>
@@ -145,6 +168,11 @@ export function SkillsPage() {
               Rust has been amazing at teaching me more computer science tenets,
               and has overall made me a better programmer.
             </p>
+            <p>
+              Studying Rust also enabled me to get up to speed in C#, when the
+              opportunity presented. I was able to crash study the syntax &
+              learn some of the quirks and best practices in one week.
+            </p>
             <DropdownButton
               text="less"
               onClick={() =>
@@ -155,7 +183,7 @@ export function SkillsPage() {
         )}
         {/* POINT THREE */}
         <h2 className="py-10 text-2xl font-bold text-purple-500">
-          <span className="pr-4 text-5xl font-alegreya text-neutral-600">
+          <span className="pr-4 font-alegreya text-5xl text-neutral-600">
             # 3
           </span>{" "}
           I'm multifaceted!
@@ -164,7 +192,10 @@ export function SkillsPage() {
         {!isThreeDropdownOpen && (
           <>
             <p className="text-neutral-300">
-              I said I am a Frontend+ Developer - that's not a typo <i>(I'm too detail-oriented for that!)</i>. I use various languages for CLI tools, create full-stack projects, and make full use of design tools.
+              I said I am a Frontend+ Developer - that's not a typo{" "}
+              <i>(I'm too detail-oriented for that!)</i>. I use various
+              languages for CLI tools, create full-stack projects, and make full
+              use of design tools.
             </p>
             <DropdownButton
               text="more"
@@ -182,17 +213,17 @@ export function SkillsPage() {
               <span className="emphasis-text">command-line utilities</span>.
               Here are some projects I created & why:
             </p>
-            <ul className="px-10 space-y-2">
+            <ul className="space-y-2 px-10">
               <li>
                 A{" "}
-                <span className="text-purple-400 font-roboto-mono">
+                <span className="font-roboto-mono text-purple-400">
                   timezone tool
                 </span>{" "}
                 to quickly check teammates' times to arrange meetings.
               </li>
               <li>
                 A{" "}
-                <span className="text-purple-400 font-roboto-mono">
+                <span className="font-roboto-mono text-purple-400">
                   decimal time converter
                 </span>{" "}
                 to assist me when entering times for part-time jobs -{" "}
@@ -209,11 +240,12 @@ export function SkillsPage() {
               <span className="emphasis-text">full-stack</span> projects. I had
               started with the <span className="tech-text">MERN</span> stack,
               but now love the simplicity of{" "}
-              <span className="tech-text">SQL</span>.
+              <span className="tech-text">SQL</span>. I love it for the ease
+              with which I can organize and sort data.
             </p>
             <p>
-              I started out in <span className="emphasis-text">frontend</span>,
-              so design is still a pasttime of mine. I used{" "}
+              I started out in <span className="emphasis-text">Frontend</span>,
+              so design is still a past-time of mine. I used{" "}
               <span className="tech-text">Photoshop</span> extensively in my
               last career, but have expanded to{" "}
               <span className="tech-text">Illustrator</span> &{" "}

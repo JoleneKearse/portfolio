@@ -23,6 +23,7 @@ const imageLookup = {
   ReactRouter: "/reactrouter.svg",
   Pnpm: "/pnpm.svg",
   Render: "/render.svg",
+  Csharp: "/csharp.svg",
 };
 
 export default imageLookup;
