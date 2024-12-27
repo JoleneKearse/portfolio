@@ -13,16 +13,22 @@ export function ProjectsPage() {
   useEffect(() => {
     const fetchProjects = async () => {
       const data = await getProjects();
-      console.log("fetched projects from ProjectsPage:", data);
       setProjects(data);
       setLoading(false);
-    }
+    };
 
     fetchProjects();
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex flex-col items-center justify-center space-y-6">
+        <div className="to-indigo-600 mt-32 aspect-square h-32 w-32 animate-spin rounded-full bg-gradient-to-bl from-pink-400 via-purple-400 p-3 drop-shadow-2xl md:h-48 md:w-48">
+          <div className="background-blur-md h-full w-full rounded-full bg-purple-950"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (
