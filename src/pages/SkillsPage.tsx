@@ -12,6 +12,7 @@ export function SkillsPage() {
   const [isThreeDropdownOpen, setIsThreeDropdownOpen] = useState(false);
   const mainSkills: string[] = [
     "React",
+    "ReactRouter",
     "JavaScript",
     "TypeScript",
     "Tailwind",
