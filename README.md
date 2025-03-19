@@ -18,7 +18,7 @@ It also has a protected route where the owner can update projects.
 
 ![TypeScript](./readme-assets/typescript.svg)
 ![React](./readme-assets/react.svg)
-![React Router](./readme-assets/reactrouter-1.svg)
+![React Router](./readme-assets/reactrouter.svg)
 ![Supabase](./readme-assets/supabase.svg)
 ![Postgresql](./readme-assets/postgresql.svg)
 ![Tailwind](./readme-assets/tailwindcss.svg)
