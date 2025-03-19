@@ -15,13 +15,14 @@ The **projects** page displays the showcased projects in clickable cards to find
 It also has a protected route where the owner can update projects.
 
 ## Tech Stack
-![TypeScript](/typescript.svg)
-![React](/react.svg)
-![React Router](/reactrouter.svg)
-![Supabase](/supabase.svg)
-![Postgresql](/postgresql.svg)
-![Tailwind](/tailwindcss.svg)
-![pnpm](/pnpm.svg)
-![Vite](/vite.svg)
-![Git](/git.svg)
-![Photoshop](/photoshop.svg)
+
+![TypeScript](./readme-assets/typescript.svg)
+![React](./readme-assets/react.svg)
+![React Router](./readme-assets/reactrouter.svg)
+![Supabase](./readme-assets/supabase.svg)
+![Postgresql](./readme-assets/postgresql.svg)
+![Tailwind](./readme-assets/tailwindcss.svg)
+![pnpm](./readme-assets/pnpm.svg)
+![Vite](./readme-assets/vite.svg)
+![Git](./readme-assets/git.svg)
+![Photoshop](./readme-assets/photoshop.svg)
