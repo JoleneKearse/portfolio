@@ -18,12 +18,12 @@ export function ProjectsPage() {
         const data = await getProjects();
 
         if (!data.length) {
-          setProjects(fallbackProjects);
+          setProjects([...fallbackProjects].reverse());
           setUsingFallback(true);
           return;
         }
 
-        setProjects(data);
+        setProjects([...data].reverse());
       } finally {
         setLoading(false);
       }
