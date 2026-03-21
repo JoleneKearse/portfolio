@@ -6,6 +6,7 @@ import {
   handleFileUpload,
   // updateProject,
 } from "../services/projectActions";
+import { useAuth } from "./AuthProvider";
 
 type ProjectFormProps = {
   selectedProject?: Project;
@@ -13,6 +14,7 @@ type ProjectFormProps = {
 };
 
 export function ProjectForm({ selectedProject, mode }: ProjectFormProps) {
+  const { user } = useAuth();
   const titleRef = useRef<HTMLInputElement>(null);
   const imgRef = useRef<HTMLInputElement>(null);
   const imgAltRef = useRef<HTMLInputElement>(null);
@@ -25,6 +27,11 @@ export function ProjectForm({ selectedProject, mode }: ProjectFormProps) {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+
+    if (!user?.id) {
+      alert("You must be logged in to add a project.");
+      return;
+    }
 
     // handle image and video uploads
     const imgFile = imgRef.current?.files?.[0];
@@ -49,7 +56,7 @@ export function ProjectForm({ selectedProject, mode }: ProjectFormProps) {
       techUsed: [] as string[],
       video: videoPath || "",
       challenges: (challengesRef.current?.value as string) || "",
-      user_id: "fabd38a7-9f69-4e2b-afb3-14df4d2d73b1",
+      user_id: selectedProject?.user_id || user.id,
     };
 
     // get the selected tech used
