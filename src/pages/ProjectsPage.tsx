@@ -5,16 +5,28 @@ import { ProjectCard } from "../components/ProjectCard";
 
 import { Project } from "../types/types";
 import { getProjects } from "../services/projectActions";
+import { projects as fallbackProjects } from "../data/projects";
 
 export function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [usingFallback, setUsingFallback] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const data = await getProjects();
-      setProjects(data);
-      setLoading(false);
+      try {
+        const data = await getProjects();
+
+        if (!data.length) {
+          setProjects(fallbackProjects);
+          setUsingFallback(true);
+          return;
+        }
+
+        setProjects(data);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchProjects();
@@ -34,6 +46,12 @@ export function ProjectsPage() {
   return (
     <section className="space-y-6">
       <Heading text="Jolene's Projects" />
+      {usingFallback && (
+        <p className="rounded-xl bg-purple-900 px-4 py-3 text-purple-300">
+          Couldn&apos;t load projects from Supabase right now, so these are local
+          fallback projects.
+        </p>
+      )}
       <ul className="flex flex-col md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-2">
         {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} />
