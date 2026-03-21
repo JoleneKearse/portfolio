@@ -37,32 +37,47 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const initializeSession = async () => {
+      const {
+        data: { session },
+        error,
+      } = await supabase.auth.getSession();
+
+      if (error) {
+        console.error("Error getting initial session:", error.message);
+      }
+
+      setUser(session?.user ?? null);
+      setIsLoading(false);
+    };
+
+    initializeSession();
+
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
-        console.log("session onAuthStateChange: ", session);
-        if (session) {
-          console.log("Setting user: ", session.user);
-          setUser(session.user);
-        }
+        setUser(session?.user ?? null);
         setIsLoading(false);
       },
     );
+
     return () => {
-      listener?.subscription.unsubscribe();
+      listener.subscription.unsubscribe();
     };
   }, []);
 
   const signIn = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
-      options: { skipBrowserRedirect: false },
+      options: {
+        skipBrowserRedirect: false,
+        redirectTo: `${window.location.origin}/admin`,
+      },
     });
-    console.log("data: ", data);
-    console.log("error: ", error);
 
     if (error) {
       console.error("Error signing in with GitHub:", error.message);
     }
+
     return { data: data as OAuthResponse | null, error };
   };
 
