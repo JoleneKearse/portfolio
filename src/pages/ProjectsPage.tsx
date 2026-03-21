@@ -48,8 +48,8 @@ export function ProjectsPage() {
       <Heading text="Jolene's Projects" />
       {usingFallback && (
         <p className="rounded-xl bg-purple-900 px-4 py-3 text-purple-300">
-          Couldn&apos;t load projects from Supabase right now, so these are local
-          fallback projects.
+          Couldn&apos;t load projects from Supabase right now, so these are
+          local fallback projects.
         </p>
       )}
       <ul className="flex flex-col md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-2">
