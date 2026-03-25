@@ -64,3 +64,63 @@ export async function getProjectId(id: string): Promise<Project | null> {
 
   return data ? data[0] : null;
 }
+
+type GithubRepoMeta = {
+  pushed_at: string;
+};
+
+function getRepoPathFromGithubUrl(url: string): string | null {
+  try {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.hostname !== "github.com") {
+      return null;
+    }
+
+    const [owner, repo] = parsedUrl.pathname
+      .split("/")
+      .filter(Boolean)
+      .slice(0, 2);
+
+    if (!owner || !repo) {
+      return null;
+    }
+
+    return `${owner}/${repo.replace(/\.git$/, "")}`;
+  } catch {
+    return null;
+  }
+}
+
+export async function sortProjectsByGithubLastUpdated(
+  projectList: Project[],
+): Promise<Project[]> {
+  const datedProjects = await Promise.all(
+    projectList.map(async (project) => {
+      const repoPath = getRepoPathFromGithubUrl(project.github);
+      if (!repoPath) {
+        return { project, lastUpdated: "" };
+      }
+
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repoPath}`);
+
+        if (!response.ok) {
+          return { project, lastUpdated: "" };
+        }
+
+        const data = (await response.json()) as GithubRepoMeta;
+        return { project, lastUpdated: data.pushed_at ?? "" };
+      } catch {
+        return { project, lastUpdated: "" };
+      }
+    }),
+  );
+
+  return datedProjects
+    .sort((a, b) => {
+      const aTime = a.lastUpdated ? new Date(a.lastUpdated).getTime() : 0;
+      const bTime = b.lastUpdated ? new Date(b.lastUpdated).getTime() : 0;
+      return bTime - aTime;
+    })
+    .map(({ project }) => project);
+}
