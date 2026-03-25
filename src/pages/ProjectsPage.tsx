@@ -4,7 +4,7 @@ import { Heading } from "../components/Heading";
 import { ProjectCard } from "../components/ProjectCard";
 
 import { Project } from "../types/types";
-import { getProjects } from "../services/projectActions";
+import { getProjects, sortProjectsByGithubLastUpdated } from "../services/projectActions";
 import { projects as fallbackProjects } from "../data/projects";
 
 export function ProjectsPage() {
@@ -18,12 +18,16 @@ export function ProjectsPage() {
         const data = await getProjects();
 
         if (!data.length) {
-          setProjects([...fallbackProjects].reverse());
+          const sortedFallbackProjects = await sortProjectsByGithubLastUpdated(
+            fallbackProjects,
+          );
+          setProjects(sortedFallbackProjects);
           setUsingFallback(true);
           return;
         }
 
-        setProjects([...data].reverse());
+        const sortedProjects = await sortProjectsByGithubLastUpdated(data);
+        setProjects(sortedProjects);
       } finally {
         setLoading(false);
       }
